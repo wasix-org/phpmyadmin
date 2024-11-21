@@ -1,0 +1,18 @@
+[package]
+name = "wasmer/phpmyadmin"
+version = "5.2.1-build1"
+
+[dependencies]
+"php/php" = "8.3"
+
+[fs]
+"/app" = "app"
+
+[[command]]
+name = "run"
+module = "php/php:php"
+runner = "wasi"
+[command.annotations.wasi]
+main-args = ["-t", "/app", "-S", "localhost:8080"]
+env = ["PMA_AUTH_TYPE=http"]
+
