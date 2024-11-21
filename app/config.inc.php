@@ -187,6 +187,7 @@ $vars = [
     'PMA_SAVEDIR',
     'PMA_SSL',
     'PMA_SSLS',
+    'PMA_DATABASE',
 ];
 
 foreach ($vars as $var) {
@@ -292,6 +293,11 @@ for ($i = 1; isset($hosts[$i - 1]); $i++) {
     }
     $cfg['Servers'][$i]['compress'] = false;
     $cfg['Servers'][$i]['AllowNoPassword'] = true;
+
+
+    if (isset($_ENV['PMA_DATABASE']) && $_ENV['PMA_DATABASE'] != '') {
+        $cfg['Servers'][$i]['only_db'] = $_ENV['PMA_DATABASE'];
+    }
 }
 for ($i = 1; isset($sockets[$i - 1]); $i++) {
     $cfg['Servers'][$i]['socket'] = $sockets[$i - 1];
