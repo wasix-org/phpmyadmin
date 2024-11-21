@@ -39,7 +39,7 @@ if (! @is_readable(AUTOLOAD_FILE)) {
 
 require AUTOLOAD_FILE;
 
-chdir('..');
+chdir('/app');
 
 // Send correct type.
 header('Content-Type: text/javascript; charset=UTF-8');

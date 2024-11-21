@@ -30,7 +30,7 @@ if (! @is_readable(AUTOLOAD_FILE)) {
 
 require AUTOLOAD_FILE;
 
-chdir('..');
+chdir('/app');
 
 $isMinimumCommon = true;
 
