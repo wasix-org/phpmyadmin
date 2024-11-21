@@ -1,6 +1,6 @@
 [package]
 name = "wasmer/phpmyadmin"
-version = "5.2.1-build1"
+version = "5.2.1-build2"
 
 [dependencies]
 "php/php" = "8.3"

@@ -6,7 +6,7 @@ The package is published to the Wasmer registry: https://wasmer.io/wasmer/phpmya
 
 ## Usage
 
-`wasmer run --env PMA_HOST=127.0.0.1 --env PMA_PORT=3306 wasmer/phpmyadmin
+`wasmer run --env PMA_HOST=127.0.0.1 --env PMA_PORT=3306 wasmer/phpmyadmin`
 
 ### HTTP Basic Auth
 
