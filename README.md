@@ -40,8 +40,12 @@ The `./app`directory contains a release bundle of phpmyadmin.
 Check the `./app/RELEASE-DATE-*` file to see the upstream phpmyadmin version.
 
 Naming scheme for Wasmer package versions:
-  `<upstream-version>-build<X>`.
-  Eg: `5.2.1-build1`
+  `<upstream-version><build-version>`.
+  Eg: `5.2.101`
+  The patch version will include upstream patch version, and a two-digit build version.
+  So the above example 1 is the upstream patch version, and the second 01 is the build version.
+  We do this to still remain functional with semantic versioning while still having a version that reflects the upstream version properly.
+
 
 Changes:
 * a custom config.inc.php with enables more env-var based configuration
