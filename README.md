@@ -14,7 +14,7 @@ To use the package with a pre-defined DB host, but with HTTP basic auth provided
 
 Eg:
 ```
-wasmer run --env PMA_HOST_TYPE=http --env PMA_HOST=127.0.0.1 --env PMA_PORT=3306 wasmer/phpmyadmin
+wasmer run --env PMA_AUTH_TYPE=http --env PMA_HOST=127.0.0.1 --env PMA_PORT=3306 wasmer/phpmyadmin
 
 curl http://user:pw@localhost:8080
 ```
