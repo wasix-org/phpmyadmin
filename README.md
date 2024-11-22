@@ -26,7 +26,7 @@ Avaiblable env vars:
 * `PMA_HOST` - the DB host
 * `PMA_PORT` - the DB port - optional, defaults to 3306
 * `PMA_DATABASE` - limit access to the specific database
-
+* `PMA_DATA_DIR` - directory to use for storing sessions, uploads and exports
 
 ## Development
 

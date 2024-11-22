@@ -188,6 +188,7 @@ $vars = [
     'PMA_SSL',
     'PMA_SSLS',
     'PMA_DATABASE',
+    'PMA_DATA_DIR',
 ];
 
 foreach ($vars as $var) {
@@ -196,6 +197,31 @@ foreach ($vars as $var) {
         $_ENV[$var] = $env;
     }
 }
+
+if (isset($_ENV["PMA_DATA_DIR"]) && $_ENV["PMA_DATA_DIR"] != "") {
+    $dataDir = $_ENV["PMA_DATA_DIR"];
+    // Trim trailing slash.
+    $dataDir = rtrim($dataDir, DIRECTORY_SEPARATOR);
+
+    $sessionDir = $dataDir . DIRECTORY_SEPARATOR . "sessions";
+    if (!is_dir($sessionDir)) {
+      mkdir($sessionDir, 0777, true);
+    }
+    $cfg["SessionSavePath"] = $sessionDir;
+
+    $uploadDir = $dataDir . DIRECTORY_SEPARATOR . "uploads";
+    if (!is_dir($uploadDir)) {
+      mkdir($uploadDir, 0777, true);
+    }
+    $cfg["UploadDir"] = $uploadDir;
+
+    $saveDir = $dataDir . DIRECTORY_SEPARATOR . "saves";
+    if (!is_dir($saveDir)) {
+      mkdir($saveDir, 0777, true);
+    }
+    $cfg["SaveDir"] = $saveDir;
+}
+
 if (isset($_ENV['PMA_QUERYHISTORYDB'])) {
     $cfg['QueryHistoryDB'] = (bool) $_ENV['PMA_QUERYHISTORYDB'];
 }
